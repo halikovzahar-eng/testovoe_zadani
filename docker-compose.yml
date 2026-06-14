@@ -3,7 +3,7 @@ version: '3.8'
 services:
   backend:
     build: ./backend
-    container_name: effective-backend
+    container_name: web-backend
     restart: unless-stopped
     expose:
       - "8080"
@@ -12,7 +12,7 @@ services:
 
   nginx:
     image: nginx:1.26-alpine
-    container_name: effective-nginx
+    container_name: revers_proxy-nginx
     restart: unless-stopped
     ports:
       - "80:80"
@@ -26,4 +26,4 @@ services:
 networks:
   app-network:
     driver: bridge
-    name: effective-network
+    name: docker-network

@@ -10,28 +10,8 @@ class MyHandler(BaseHTTPRequestHandler):
             # 2. Отправляем заголовки (headers)
             self.send_header("Content-type", "text/plain; charset=utf-8")
             self.end_headers()
-            html = '''
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <style>
-                    body {
-                        margin: 0;
-                        padding: 0;
-                    }
-                    .message {
-                        font-size: 48px;  /* Измените размер: 24px, 36px, 72px и т.д. */
-                        font-family: Arial, sans-serif;
-                        color: #333;
-                    }
-                </style>
-            </head>
-            <body>
-                <div class="message">Hello from Effective Mobile!</div>
-            </body>
-            </html>
-            '''
-            self.wfile.write(html.encode('utf-8'))
+            # 3. Отправляем тело ответа
+            self.wfile.write("Hello from Effective Mobile!".encode("utf-8"))
         else:
             self.send_response(404)
             self.end_headers()

@@ -1,19 +1,19 @@
 # Тестовое задиние
 
 ## Структура проекта
-├── backend/
-│ ├── app.py
-│ └── Dockerfile
-├── nginx/
-│ └── nginx.conf
-├── docker-compose.yml
+1. backend/
+    - app.py
+    - Dockerfile
+2. nginx/
+    - nginx.conf
+3. docker-compose.yml
 
 ## Как развернуть
 1. В VS code  установить расширения GitHub Repositories, Docker DX, Python
 2. Установить docker desktop либо docker engine + docker compose(для Linux без графического интерфейса)
-3. Установить git и клонировать уделнный репозиторий ``` git clone "ссылка либо SHH-ключ репизитория" ``` и переходим в него командой cd testovoe_zadani 
-4. Выполнить команду ``` docker compose up -d ``` она запустит web-приложение и nginx  
-5. Для проверки либо в Docker Desktop  во вкладке контейнеры посмотреть запущенные, там будет docker-compose в котором web-backend, revers_proxy-nginx. либо командой ``` docker ps ```
+3. Установить git и клонировать уделнный репозиторий ``` git clone "ссылка либо SHH-ключ репизитория" ``` и переходим в него командой в VS Code создаем терминал
+4. Выполнить команду ```docker-compose build``` собирает приложения, ``` docker compose up -d ```  запустит web-приложение и nginx  
+5. Для проверки в Docker Desktop  во вкладке контейнеры посмотреть запущенные, там будет docker-compose в котором web-backend, revers_proxy-nginx. либо командой ``` docker ps ```
 6. В терминале ``` curl http://localhost ``` либо в браузере http://localhost. Ответ должен быть Hello from Effective Mobile!
 
 
